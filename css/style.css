@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #7a2599, #063568);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2d5016;
+    margin-bottom: 20px;
+}
+
+.tools {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.tool {
+    padding: 10px 15px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.tool:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+.tool.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    color: #2d5016;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    background: #8B4513;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cell {
+    aspect-ratio: 1;
+    border: 1px solid #654321;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cell:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.cell.earth {
+    background: linear-gradient(45deg, #DEB887, #8B4513);
+}
+
+.cell.water {
+    background: linear-gradient(45deg, #4169E1, #87CEEB);
+}
+
+.plant {
+    position: absolute;
+    bottom: 2px;
+    font-size: 16px;
+    transition: all 0.5s ease;
+}
+
+.plant-growth-1 { transform: scale(0.7); opacity: 0.8; }
+.plant-growth-2 { transform: scale(0.9); opacity: 0.9; }
+.plant-growth-3 { transform: scale(1.1); opacity: 1; }
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+    .tools {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tool {
+        width: 200px;
+    }
+}
